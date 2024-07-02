@@ -1,53 +1,54 @@
-/* styles.css */
-
-body {
-  font-family: Arial, sans-serif;
+/* General styling for the map and form container */
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 #map {
-  height: 100vh; /* Full height of the viewport */
+  width: 100%;
+  height: 100%;
 }
 
-#controls {
+.form-container {
   position: absolute;
   top: 10px;
-  left: 10px;
-  background: white;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-#controls h2 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-#markerForm {
+.form-container form {
   display: grid;
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 5px;
 }
 
-#markerForm label {
+.form-container label {
   font-weight: bold;
 }
 
-#markerForm input, #markerForm button {
-  padding: 5px;
-  font-size: 14px;
-}
-
-#markerForm button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+.form-container button {
+  margin-top: 5px;
+  padding: 5px 10px;
   cursor: pointer;
-  border-radius: 3px;
 }
 
-#markerForm button:hover {
-  background-color: #0056b3;
+/* Marker and label styles */
+.marker-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: yellow;
+  border: 2px solid red;
+}
+
+.label {
+  color: red;
+  background: yellow;
+  border: 1px solid black;
+  padding: 2px 5px;
+  border-radius: 3px;
 }

@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Leaflet with Custom Markers and Color Detection</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet Map with Custom Markers</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
   <div id="map"></div>
-
-  <div id="controls">
-    <h2>Add Custom Marker</h2>
-    <form id="markerForm" onsubmit="addCustomMarker(event)">
+  <div id="markerForm" class="form-container">
+    <form>
       <label for="lat">Latitude:</label>
-      <input type="text" id="lat" name="lat" placeholder="Enter latitude" required><br><br>
-
+      <input type="text" id="lat" name="lat" required>
       <label for="lon">Longitude:</label>
-      <input type="text" id="lon" name="lon" placeholder="Enter longitude" required><br><br>
-
+      <input type="text" id="lon" name="lon" required>
       <label for="label">Label:</label>
-      <input type="text" id="label" name="label" placeholder="Enter label"><br><br>
-
+      <input type="text" id="label" name="label">
       <label for="markerColor">Marker Color:</label>
-      <input type="color" id="markerColor" name="markerColor" value="#ff0000"><br><br>
-
-      <button type="submit">Add Marker</button>
+      <input type="color" id="markerColor" name="markerColor" value="#ff0000">
+      <button type="submit">Add Custom Marker</button>
+      <button type="button" id="exportMap">Export Map as PNG</button>
     </form>
   </div>
-
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
   <script src="map.js"></script>
 </body>
 </html>
