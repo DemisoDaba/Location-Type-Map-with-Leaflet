@@ -1,43 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Leaflet with Custom Markers and Color Detection</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rainfall and Soil Moisture Data</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-
-  <h1>Rainfall and Soil Moisture Data</h1>
-
-  <form id="dataForm">
-    <h3>Fetch Rainfall or Soil Moisture Data</h3>
-    
-    <label for="minLat">Min Latitude:</label>
-    <input type="number" id="minLat" step="0.01" required><br>
-    
-    <label for="maxLat">Max Latitude:</label>
-    <input type="number" id="maxLat" step="0.01" required><br>
-    
-    <label for="minLon">Min Longitude:</label>
-    <input type="number" id="minLon" step="0.01" required><br>
-    
-    <label for="maxLon">Max Longitude:</label>
-    <input type="number" id="maxLon" step="0.01" required><br>
-    
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" required><br>
-    
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" required><br>
-    
-    <button type="submit">Fetch Data</button>
-  </form>
-
-  <!-- Map container -->
   <div id="map"></div>
-
+  <div id="markerForm" class="form-container">
+    <form>
+      <label for="lat">Latitude:</label>
+      <input type="text" id="lat" name="lat" required>
+      <label for="lon">Longitude:</label>
+      <input type="text" id="lon" name="lon" required>
+      <label for="label">Label:</label>
+      <input type="text" id="label" name="label">
+      <label for="markerColor">Marker Color:</label>
+      <input type="color" id="markerColor" name="markerColor" value="#ff0000">
+      <button type="submit">Add Custom Marker</button>
+      <button type="button" id="exportMap">Export Map as PNG</button>
+    </form>
+  </div>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="script.js"></script> <!-- Link to the JS file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="map.js"></script>
 </body>
 </html>
